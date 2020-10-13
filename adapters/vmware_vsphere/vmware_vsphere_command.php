@@ -160,11 +160,12 @@ class vmware_vsphere_command extends generic_command
         else
         {
           $i = 0;
+	  $conf = 'POST#';
           foreach ($xml_configs as $xml_conf)
           {
             if (!empty($xml_conf))
             {
-              $conf = $endpoints[$i];
+              $conf .= $endpoints[$i];
               $conf .= '#' . $xpaths[$i];
               // separate data with '#'
               $conf .= '#' . $xml_conf;
